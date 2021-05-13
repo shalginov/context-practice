@@ -12,7 +12,7 @@ const App = () => {
   return <div>
     <NewNoteInput></NewNoteInput>
     <ul>
-      {notes.map(note=><li>{note}</li>)}
+      {notes.map(note=><li onClick={() => removeNote(note.id)} key={note.id}>{note.text}</li>)}
     </ul>
   </div>
 }

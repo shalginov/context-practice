@@ -11,11 +11,12 @@ export const NewNoteInput = () => {
 
     const addNewNote = () => {
         addNote(text)
+        console.log("add note");
     }
 
     return <>
         <input onChange={onChangeInput} value={text}></input>
-        <button type="submit" onSubmit={addNewNote}>Add</button>
+        <button type="submit" onClick={addNewNote}>Add</button>
     </>
 
 

@@ -6,8 +6,6 @@ export const NotesContext = createContext({
 
 export const NotesProvider = ({children}) => {
     const [notes, setNotes] = useState([])
-
-
     
     const addNote = (text) => {
         setNotes([...notes, {text: text, id: Math.random()}])
