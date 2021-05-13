@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {NewNoteInput} from "./NewNoteInput"
+import {NotesContext}from "./NotesContext"
+import {NotesProvider} from "./NotesContext"
+
+
+const App = () => {
+  const {notes, removeNote} = React.useContext(NotesContext)
+
+  return <div>
+    <NewNoteInput></NewNoteInput>
+    <ul>
+      {notes.map(note=><li>{note}</li>)}
+    </ul>
+  </div>
+}
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <NotesProvider>
     <App />
-  </React.StrictMode>,
+  </NotesProvider>,
   document.getElementById('root')
 );
 
